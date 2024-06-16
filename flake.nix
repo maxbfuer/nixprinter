@@ -19,7 +19,7 @@
     };
 
     deploy.nodes.nixprinter = {
-      hostname = "192.168.0.235";
+      hostname = "192.168.0.25";
       sshUser = "root";
       profiles.system = {
         user = "root";
