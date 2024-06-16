@@ -3,8 +3,9 @@
 
   # For accessing `deploy-rs`'s utility Nix functions
   inputs = {
-    deploy-rs.url = "github:serokell/deploy-rs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
