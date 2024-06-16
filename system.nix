@@ -1,9 +1,6 @@
 {pkgs, ...}: {
   # TODO: swapfile
 
-  nixpkgs.buildPlatform.system = "x86_64-linux";
-  nixpkgs.hostPlatform.system = "aarch64-linux";
-
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
   boot.loader.grub.enable = false;
   # Enables the generation of /boot/extlinux/extlinux.conf
@@ -35,6 +32,20 @@
     libraspberrypi
     git
     neovim
+  ];
+
+  # Use a 4G swap file with zswap (zstd)
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 4096;
+    }
+  ];
+  boot.kernelParams = [
+    "zswap.enabled=1"
+    "zswap.compressor=zstd"
+    "zswap.max_pool_percent=20"
+    "zswap.zpool=zsmalloc"
   ];
 
   system.stateVersion = "24.05";
