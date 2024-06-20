@@ -33,6 +33,7 @@
     libraspberrypi
     git
     neovim
+    htop
   ];
 
   # Use a 4G swap file with zswap (zstd)
