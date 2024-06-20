@@ -3,6 +3,7 @@
     klipper = {
       enable = true;
       configFile = ./klipper/neptune3plus.cfg;
+      mutableConfig = true;
     };
 
     moonraker = {
@@ -39,6 +40,7 @@
     # allow for larger gcode uploads to mainsail
     nginx.clientMaxBodySize = "1000m";
   };
+
   # moonraker wants polkit
   security.polkit.enable = true;
 }
