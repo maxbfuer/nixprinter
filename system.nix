@@ -36,19 +36,19 @@
     htop
   ];
 
-  # Use a 4G swap file with zswap (zstd)
+  # Use a 4G swap file
   swapDevices = [
     {
       device = "/swapfile";
       size = 4096;
     }
   ];
-  boot.kernelParams = [
-    "zswap.enabled=1"
-    "zswap.compressor=zstd"
-    "zswap.max_pool_percent=20"
-    "zswap.zpool=zsmalloc"
-  ];
+
+  zramSwap = {
+    enable = true;
+    memoryPercent = 80;
+    algorithm = "zstd";
+  };
 
   system.stateVersion = "24.05";
 }
