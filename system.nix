@@ -21,6 +21,15 @@
         };
       };
     };
+    interfaces.wlan0 = {
+      macAddress = "92:9A:4A:D1:7F:57";
+      ipv4.addresses = [
+        {
+          address = "192.168.0.25";
+          prefixLength = 24;
+        }
+      ];
+    };
     firewall.enable = false;
   };
 
