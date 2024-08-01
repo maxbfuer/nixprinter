@@ -30,6 +30,11 @@
         }
       ];
     };
+    defaultGateway = {
+      address = "192.168.0.1";
+      interface = "wlan0";
+    };
+    nameservers = ["8.8.8.8" "8.8.4.4" "1.1.1.1"];
     firewall.enable = false;
   };
 
