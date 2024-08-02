@@ -21,20 +21,7 @@
         };
       };
     };
-    interfaces.wlan0 = {
-      macAddress = "92:9A:4A:D1:7F:57";
-      ipv4.addresses = [
-        {
-          address = "192.168.0.25";
-          prefixLength = 24;
-        }
-      ];
-    };
-    defaultGateway = {
-      address = "192.168.0.1";
-      interface = "wlan0";
-    };
-    nameservers = ["8.8.8.8" "8.8.4.4" "1.1.1.1"];
+    interfaces.wlan0.macAddress = "B8:27:EB:D1:7F:57";
     firewall.enable = false;
   };
 
