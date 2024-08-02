@@ -51,5 +51,13 @@
     algorithm = "zstd";
   };
 
+  # zstd compression is enabled by default
+  # I could potentially use volatile storage to avoid read/writes on microsd, but won't for now
+  # this will clear old journal files when more than 300M is used
+  services.journald.extraConfig = ''
+    [Journal]
+    SystemMaxUse=300M
+  '';
+
   system.stateVersion = "24.05";
 }
