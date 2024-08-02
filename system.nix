@@ -59,5 +59,12 @@
     SystemMaxUse=300M
   '';
 
+  # delete generations older than 30d, checking every week
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   system.stateVersion = "24.05";
 }
